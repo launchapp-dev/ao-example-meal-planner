@@ -1,0 +1,192 @@
+{
+  "last_updated": "2026-03-30",
+  "items": [
+    {
+      "name": "spinach",
+      "quantity": 1,
+      "unit": "bag",
+      "expiry_estimate": "2026-04-03",
+      "notes": "Use within 3-4 days",
+      "priority": "USE_SOON",
+      "days_until_expiry": 4
+    },
+    {
+      "name": "rice_white",
+      "quantity": 3,
+      "unit": "cup",
+      "expiry_estimate": "2026-12-01",
+      "notes": "Jasmine rice"
+    },
+    {
+      "name": "lentils_red",
+      "quantity": 2,
+      "unit": "cup",
+      "expiry_estimate": "2026-09-01"
+    },
+    {
+      "name": "chickpeas_can",
+      "quantity": 2,
+      "unit": "can",
+      "expiry_estimate": "2027-06-01"
+    },
+    {
+      "name": "black_beans_can",
+      "quantity": 2,
+      "unit": "can",
+      "expiry_estimate": "2027-06-01"
+    },
+    {
+      "name": "diced_tomatoes_can",
+      "quantity": 1,
+      "unit": "can",
+      "expiry_estimate": "2027-06-01"
+    },
+    {
+      "name": "crushed_tomatoes_can",
+      "quantity": 1,
+      "unit": "can",
+      "expiry_estimate": "2027-06-01"
+    },
+    {
+      "name": "coconut_milk_can",
+      "quantity": 1,
+      "unit": "can",
+      "expiry_estimate": "2027-03-01"
+    },
+    {
+      "name": "vegetable_broth",
+      "quantity": 1,
+      "unit": "carton",
+      "expiry_estimate": "2026-08-01"
+    },
+    {
+      "name": "olive_oil",
+      "quantity": 8,
+      "unit": "oz",
+      "expiry_estimate": "2026-11-01"
+    },
+    {
+      "name": "soy_sauce",
+      "quantity": 6,
+      "unit": "oz",
+      "expiry_estimate": "2027-01-01"
+    },
+    {
+      "name": "sesame_oil",
+      "quantity": 4,
+      "unit": "oz",
+      "expiry_estimate": "2026-10-01"
+    },
+    {
+      "name": "honey",
+      "quantity": 8,
+      "unit": "oz",
+      "expiry_estimate": "2028-01-01"
+    },
+    {
+      "name": "oats_rolled",
+      "quantity": 20,
+      "unit": "oz",
+      "expiry_estimate": "2026-12-01"
+    },
+    {
+      "name": "pasta_penne",
+      "quantity": 0.5,
+      "unit": "lb",
+      "expiry_estimate": "2027-01-01"
+    },
+    {
+      "name": "quinoa",
+      "quantity": 0.5,
+      "unit": "cup",
+      "expiry_estimate": "2026-12-01"
+    },
+    {
+      "name": "garlic_clove",
+      "quantity": 8,
+      "unit": "each",
+      "expiry_estimate": "2026-04-15"
+    },
+    {
+      "name": "onion_yellow",
+      "quantity": 3,
+      "unit": "each",
+      "expiry_estimate": "2026-04-20"
+    },
+    {
+      "name": "potato_russet",
+      "quantity": 2,
+      "unit": "each",
+      "expiry_estimate": "2026-04-10",
+      "notes": "Use soon \u2014 starting to sprout"
+    },
+    {
+      "name": "carrots",
+      "quantity": 0.5,
+      "unit": "lb",
+      "expiry_estimate": "2026-04-08",
+      "notes": "Use by end of week"
+    },
+    {
+      "name": "greek_yogurt_plain",
+      "quantity": 16,
+      "unit": "oz",
+      "expiry_estimate": "2026-04-05"
+    },
+    {
+      "name": "cheddar_cheese",
+      "quantity": 4,
+      "unit": "oz",
+      "expiry_estimate": "2026-04-15"
+    },
+    {
+      "name": "eggs_dozen",
+      "quantity": 6,
+      "unit": "each",
+      "expiry_estimate": "2026-04-20"
+    },
+    {
+      "name": "butter",
+      "quantity": 0.5,
+      "unit": "lb",
+      "expiry_estimate": "2026-05-01"
+    },
+    {
+      "name": "cumin_ground",
+      "quantity": 1,
+      "unit": "jar",
+      "expiry_estimate": "2027-01-01"
+    },
+    {
+      "name": "turmeric",
+      "quantity": 1,
+      "unit": "jar",
+      "expiry_estimate": "2027-01-01"
+    },
+    {
+      "name": "garam_masala",
+      "quantity": 1,
+      "unit": "jar",
+      "expiry_estimate": "2027-01-01"
+    },
+    {
+      "name": "paprika_smoked",
+      "quantity": 1,
+      "unit": "jar",
+      "expiry_estimate": "2027-01-01"
+    },
+    {
+      "name": "chili_powder",
+      "quantity": 1,
+      "unit": "jar",
+      "expiry_estimate": "2027-01-01"
+    },
+    {
+      "name": "coriander_ground",
+      "quantity": 1,
+      "unit": "jar",
+      "expiry_estimate": "2027-01-01"
+    }
+  ],
+  "expiring_soon_count": 1
+}

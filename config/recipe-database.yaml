@@ -1,0 +1,825 @@
+# Recipe Database — 45 vegetarian recipes across 5 cuisine types
+# All recipes are nut-free (no tree nuts or peanuts) to match household allergen profile
+
+recipes:
+  # ── Mediterranean ─────────────────────────────────────────────────────────
+
+  - id: med-001
+    name: "Greek Lemon Rice Bowl"
+    cuisine: Mediterranean
+    tags: [vegetarian, gluten-free, quick, meal-prep]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 20
+    total_time_min: 30
+    difficulty: easy
+    ingredients:
+      - { name: rice_white, quantity: 2, unit: cup }
+      - { name: vegetable_broth, quantity: 2, unit: cup }
+      - { name: lemon, quantity: 2, unit: each }
+      - { name: cucumber, quantity: 1, unit: each }
+      - { name: cherry_tomatoes, quantity: 1, unit: pint }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: chickpeas_can, quantity: 1, unit: can }
+      - { name: olive_oil, quantity: 3, unit: tbsp }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: oregano_dried, quantity: 1, unit: tsp }
+    nutrition_per_serving:
+      calories: 420
+      protein_g: 14
+      carbs_g: 68
+      fat_g: 10
+      fiber_g: 8
+
+  - id: med-002
+    name: "Shakshuka (Eggs in Spiced Tomato Sauce)"
+    cuisine: Mediterranean
+    tags: [vegetarian, gluten-free, quick, protein-rich]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 25
+    total_time_min: 35
+    difficulty: easy
+    ingredients:
+      - { name: eggs_dozen, quantity: 8, unit: each }
+      - { name: crushed_tomatoes_can, quantity: 1, unit: can }
+      - { name: bell_pepper_red, quantity: 2, unit: each }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 4, unit: each }
+      - { name: olive_oil, quantity: 2, unit: tbsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: paprika_smoked, quantity: 1, unit: tsp }
+      - { name: red_pepper_flakes, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 310
+      protein_g: 20
+      carbs_g: 18
+      fat_g: 18
+      fiber_g: 5
+
+  - id: med-003
+    name: "Roasted Eggplant and Chickpea Stew"
+    cuisine: Mediterranean
+    tags: [vegetarian, vegan, gluten-free, meal-prep, batch-friendly]
+    servings: 6
+    prep_time_min: 15
+    cook_time_min: 45
+    total_time_min: 60
+    difficulty: medium
+    ingredients:
+      - { name: eggplant, quantity: 2, unit: each }
+      - { name: chickpeas_can, quantity: 2, unit: can }
+      - { name: crushed_tomatoes_can, quantity: 1, unit: can }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 4, unit: each }
+      - { name: olive_oil, quantity: 4, unit: tbsp }
+      - { name: cumin_ground, quantity: 2, unit: tsp }
+      - { name: coriander_ground, quantity: 1, unit: tsp }
+      - { name: paprika_smoked, quantity: 1, unit: tsp }
+      - { name: lemon, quantity: 1, unit: each }
+    nutrition_per_serving:
+      calories: 280
+      protein_g: 11
+      carbs_g: 38
+      fat_g: 10
+      fiber_g: 12
+
+  - id: med-004
+    name: "Mediterranean Pasta Primavera"
+    cuisine: Mediterranean
+    tags: [vegetarian, quick, family-friendly]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 20
+    total_time_min: 30
+    difficulty: easy
+    ingredients:
+      - { name: pasta_penne, quantity: 0.75, unit: lb }
+      - { name: zucchini, quantity: 2, unit: each }
+      - { name: cherry_tomatoes, quantity: 1, unit: pint }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: olive_oil, quantity: 4, unit: tbsp }
+      - { name: parmesan, quantity: 2, unit: oz }
+      - { name: basil_dried, quantity: 1, unit: tsp }
+      - { name: lemon, quantity: 1, unit: each }
+    nutrition_per_serving:
+      calories: 480
+      protein_g: 16
+      carbs_g: 72
+      fat_g: 14
+      fiber_g: 6
+
+  - id: med-005
+    name: "Lentil and Vegetable Soup"
+    cuisine: Mediterranean
+    tags: [vegetarian, vegan, gluten-free, meal-prep, batch-friendly]
+    servings: 6
+    prep_time_min: 15
+    cook_time_min: 40
+    total_time_min: 55
+    difficulty: easy
+    ingredients:
+      - { name: lentils_red, quantity: 2, unit: cup }
+      - { name: carrot, quantity: 3, unit: each }
+      - { name: celery, quantity: 3, unit: stalk }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: diced_tomatoes_can, quantity: 1, unit: can }
+      - { name: vegetable_broth, quantity: 1, unit: carton }
+      - { name: olive_oil, quantity: 2, unit: tbsp }
+      - { name: cumin_ground, quantity: 2, unit: tsp }
+      - { name: turmeric, quantity: 1, unit: tsp }
+      - { name: lemon, quantity: 1, unit: each }
+    nutrition_per_serving:
+      calories: 320
+      protein_g: 18
+      carbs_g: 52
+      fat_g: 5
+      fiber_g: 16
+
+  # ── Indian ─────────────────────────────────────────────────────────────────
+
+  - id: ind-001
+    name: "Dal Tadka (Spiced Yellow Lentils)"
+    cuisine: Indian
+    tags: [vegetarian, vegan, gluten-free, meal-prep, batch-friendly]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 30
+    total_time_min: 40
+    difficulty: easy
+    ingredients:
+      - { name: lentils_red, quantity: 1.5, unit: cup }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 4, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: diced_tomatoes_can, quantity: 1, unit: can }
+      - { name: coconut_oil, quantity: 2, unit: tbsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: turmeric, quantity: 0.5, unit: tsp }
+      - { name: garam_masala, quantity: 1, unit: tsp }
+      - { name: coriander_ground, quantity: 1, unit: tsp }
+    nutrition_per_serving:
+      calories: 290
+      protein_g: 17
+      carbs_g: 44
+      fat_g: 6
+      fiber_g: 14
+
+  - id: ind-002
+    name: "Palak Paneer (Spinach with Cheese)"
+    cuisine: Indian
+    tags: [vegetarian, gluten-free, protein-rich]
+    servings: 4
+    prep_time_min: 15
+    cook_time_min: 30
+    total_time_min: 45
+    difficulty: medium
+    ingredients:
+      - { name: spinach, quantity: 2, unit: bag }
+      - { name: cream_cheese, quantity: 8, unit: oz }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 4, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: diced_tomatoes_can, quantity: 1, unit: can }
+      - { name: heavy_cream, quantity: 0.25, unit: cup }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+      - { name: garam_masala, quantity: 1.5, unit: tsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: turmeric, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 380
+      protein_g: 18
+      carbs_g: 14
+      fat_g: 28
+      fiber_g: 5
+
+  - id: ind-003
+    name: "Chana Masala (Spiced Chickpeas)"
+    cuisine: Indian
+    tags: [vegetarian, vegan, gluten-free, meal-prep, batch-friendly]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 30
+    total_time_min: 40
+    difficulty: easy
+    ingredients:
+      - { name: chickpeas_can, quantity: 2, unit: can }
+      - { name: onion_yellow, quantity: 2, unit: each }
+      - { name: garlic_clove, quantity: 4, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: diced_tomatoes_can, quantity: 1, unit: can }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+      - { name: garam_masala, quantity: 2, unit: tsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: coriander_ground, quantity: 1, unit: tsp }
+      - { name: turmeric, quantity: 0.5, unit: tsp }
+      - { name: lemon, quantity: 1, unit: each }
+    nutrition_per_serving:
+      calories: 340
+      protein_g: 15
+      carbs_g: 52
+      fat_g: 8
+      fiber_g: 14
+
+  - id: ind-004
+    name: "Vegetable Biryani"
+    cuisine: Indian
+    tags: [vegetarian, gluten-free, festive, batch-friendly]
+    servings: 6
+    prep_time_min: 20
+    cook_time_min: 50
+    total_time_min: 70
+    difficulty: medium
+    ingredients:
+      - { name: rice_white, quantity: 2, unit: cup }
+      - { name: cauliflower, quantity: 1, unit: head }
+      - { name: potato_russet, quantity: 2, unit: each }
+      - { name: onion_yellow, quantity: 2, unit: each }
+      - { name: garlic_clove, quantity: 5, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: vegetable_broth, quantity: 1, unit: carton }
+      - { name: vegetable_oil, quantity: 3, unit: tbsp }
+      - { name: garam_masala, quantity: 2, unit: tsp }
+      - { name: turmeric, quantity: 1, unit: tsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: cinnamon_ground, quantity: 0.5, unit: tsp }
+      - { name: greek_yogurt_plain, quantity: 0.5, unit: cup }
+    nutrition_per_serving:
+      calories: 420
+      protein_g: 10
+      carbs_g: 78
+      fat_g: 8
+      fiber_g: 6
+
+  - id: ind-005
+    name: "Aloo Gobi (Potato and Cauliflower Stir-fry)"
+    cuisine: Indian
+    tags: [vegetarian, vegan, gluten-free, quick]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 25
+    total_time_min: 35
+    difficulty: easy
+    ingredients:
+      - { name: potato_russet, quantity: 3, unit: each }
+      - { name: cauliflower, quantity: 1, unit: head }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: vegetable_oil, quantity: 3, unit: tbsp }
+      - { name: turmeric, quantity: 1, unit: tsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: coriander_ground, quantity: 1, unit: tsp }
+      - { name: garam_masala, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 280
+      protein_g: 6
+      carbs_g: 44
+      fat_g: 9
+      fiber_g: 7
+
+  # ── Mexican ────────────────────────────────────────────────────────────────
+
+  - id: mex-001
+    name: "Black Bean and Corn Tacos"
+    cuisine: Mexican
+    tags: [vegetarian, quick, family-friendly, customizable]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 15
+    total_time_min: 25
+    difficulty: easy
+    ingredients:
+      - { name: black_beans_can, quantity: 2, unit: can }
+      - { name: corn_on_cob, quantity: 3, unit: each }
+      - { name: bell_pepper_red, quantity: 1, unit: each }
+      - { name: onion_red, quantity: 1, unit: each }
+      - { name: avocado, quantity: 2, unit: each }
+      - { name: lime, quantity: 2, unit: each }
+      - { name: vegetable_oil, quantity: 1, unit: tbsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: chili_powder, quantity: 1, unit: tsp }
+      - { name: sour_cream, quantity: 0.5, unit: cup }
+      - { name: cheddar_cheese, quantity: 4, unit: oz }
+    nutrition_per_serving:
+      calories: 480
+      protein_g: 18
+      carbs_g: 62
+      fat_g: 18
+      fiber_g: 16
+
+  - id: mex-002
+    name: "Vegetable Fajita Bowl"
+    cuisine: Mexican
+    tags: [vegetarian, gluten-free, quick, meal-prep]
+    servings: 4
+    prep_time_min: 15
+    cook_time_min: 20
+    total_time_min: 35
+    difficulty: easy
+    ingredients:
+      - { name: rice_white, quantity: 1.5, unit: cup }
+      - { name: bell_pepper_red, quantity: 2, unit: each }
+      - { name: bell_pepper_green, quantity: 1, unit: each }
+      - { name: onion_yellow, quantity: 2, unit: each }
+      - { name: mushrooms_cremini, quantity: 2, unit: container }
+      - { name: black_beans_can, quantity: 1, unit: can }
+      - { name: avocado, quantity: 2, unit: each }
+      - { name: lime, quantity: 2, unit: each }
+      - { name: vegetable_oil, quantity: 3, unit: tbsp }
+      - { name: cumin_ground, quantity: 1.5, unit: tsp }
+      - { name: chili_powder, quantity: 1, unit: tsp }
+      - { name: paprika_smoked, quantity: 0.5, unit: tsp }
+      - { name: sour_cream, quantity: 0.5, unit: cup }
+    nutrition_per_serving:
+      calories: 510
+      protein_g: 14
+      carbs_g: 74
+      fat_g: 18
+      fiber_g: 13
+
+  - id: mex-003
+    name: "Roasted Vegetable Enchiladas"
+    cuisine: Mexican
+    tags: [vegetarian, family-friendly, weekend]
+    servings: 6
+    prep_time_min: 25
+    cook_time_min: 40
+    total_time_min: 65
+    difficulty: medium
+    ingredients:
+      - { name: zucchini, quantity: 2, unit: each }
+      - { name: bell_pepper_red, quantity: 2, unit: each }
+      - { name: onion_red, quantity: 1, unit: each }
+      - { name: mushrooms_cremini, quantity: 1, unit: container }
+      - { name: black_beans_can, quantity: 1, unit: can }
+      - { name: crushed_tomatoes_can, quantity: 1, unit: can }
+      - { name: cheddar_cheese, quantity: 8, unit: oz }
+      - { name: sour_cream, quantity: 0.5, unit: cup }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+      - { name: cumin_ground, quantity: 2, unit: tsp }
+      - { name: chili_powder, quantity: 1.5, unit: tsp }
+      - { name: oregano_dried, quantity: 1, unit: tsp }
+    nutrition_per_serving:
+      calories: 420
+      protein_g: 17
+      carbs_g: 46
+      fat_g: 19
+      fiber_g: 9
+
+  - id: mex-004
+    name: "Sweet Potato and Black Bean Burrito Bowl"
+    cuisine: Mexican
+    tags: [vegetarian, vegan-adaptable, gluten-free, meal-prep]
+    servings: 4
+    prep_time_min: 15
+    cook_time_min: 30
+    total_time_min: 45
+    difficulty: easy
+    ingredients:
+      - { name: sweet_potato, quantity: 2, unit: each }
+      - { name: black_beans_can, quantity: 2, unit: can }
+      - { name: rice_brown, quantity: 1.5, unit: cup }
+      - { name: corn_on_cob, quantity: 2, unit: each }
+      - { name: avocado, quantity: 2, unit: each }
+      - { name: lime, quantity: 2, unit: each }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+      - { name: cumin_ground, quantity: 2, unit: tsp }
+      - { name: chili_powder, quantity: 1, unit: tsp }
+      - { name: paprika_smoked, quantity: 1, unit: tsp }
+    nutrition_per_serving:
+      calories: 540
+      protein_g: 16
+      carbs_g: 86
+      fat_g: 14
+      fiber_g: 18
+
+  # ── Asian ──────────────────────────────────────────────────────────────────
+
+  - id: asi-001
+    name: "Vegetable Fried Rice"
+    cuisine: Asian
+    tags: [vegetarian, quick, meal-prep, family-friendly, leftover-rice]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 15
+    total_time_min: 25
+    difficulty: easy
+    ingredients:
+      - { name: rice_white, quantity: 2, unit: cup }
+      - { name: eggs_dozen, quantity: 3, unit: each }
+      - { name: carrots, quantity: 1, unit: bag }
+      - { name: broccoli, quantity: 1, unit: head }
+      - { name: mushrooms_cremini, quantity: 1, unit: container }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: soy_sauce, quantity: 3, unit: tbsp }
+      - { name: sesame_oil, quantity: 1, unit: tbsp }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+    nutrition_per_serving:
+      calories: 440
+      protein_g: 16
+      carbs_g: 70
+      fat_g: 12
+      fiber_g: 5
+
+  - id: asi-002
+    name: "Miso Soup with Tofu and Vegetables"
+    cuisine: Asian
+    tags: [vegetarian, vegan, quick, light]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 15
+    total_time_min: 25
+    difficulty: easy
+    ingredients:
+      - { name: mushrooms_cremini, quantity: 1, unit: container }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: garlic_clove, quantity: 2, unit: each }
+      - { name: soy_sauce, quantity: 2, unit: tbsp }
+      - { name: sesame_oil, quantity: 1, unit: tbsp }
+      - { name: vegetable_broth, quantity: 1, unit: carton }
+    nutrition_per_serving:
+      calories: 180
+      protein_g: 8
+      carbs_g: 18
+      fat_g: 8
+      fiber_g: 3
+
+  - id: asi-003
+    name: "Thai Coconut Curry with Vegetables"
+    cuisine: Asian
+    tags: [vegetarian, vegan, gluten-free, meal-prep, batch-friendly]
+    servings: 4
+    prep_time_min: 15
+    cook_time_min: 30
+    total_time_min: 45
+    difficulty: medium
+    ingredients:
+      - { name: coconut_milk_can, quantity: 2, unit: can }
+      - { name: broccoli, quantity: 1, unit: head }
+      - { name: bell_pepper_red, quantity: 2, unit: each }
+      - { name: zucchini, quantity: 1, unit: each }
+      - { name: mushrooms_cremini, quantity: 1, unit: container }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 4, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: soy_sauce, quantity: 2, unit: tbsp }
+      - { name: lime, quantity: 2, unit: each }
+      - { name: vegetable_oil, quantity: 1, unit: tbsp }
+      - { name: red_pepper_flakes, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 380
+      protein_g: 8
+      carbs_g: 22
+      fat_g: 30
+      fiber_g: 7
+
+  - id: asi-004
+    name: "Korean Bibimbap Bowl"
+    cuisine: Asian
+    tags: [vegetarian, gluten-free, meal-prep, batch-friendly]
+    servings: 4
+    prep_time_min: 20
+    cook_time_min: 25
+    total_time_min: 45
+    difficulty: medium
+    ingredients:
+      - { name: rice_white, quantity: 2, unit: cup }
+      - { name: eggs_dozen, quantity: 4, unit: each }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: carrots, quantity: 1, unit: bag }
+      - { name: mushrooms_cremini, quantity: 2, unit: container }
+      - { name: zucchini, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: soy_sauce, quantity: 4, unit: tbsp }
+      - { name: sesame_oil, quantity: 2, unit: tbsp }
+      - { name: rice_vinegar, quantity: 1, unit: tbsp }
+      - { name: honey, quantity: 1, unit: tbsp }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+    nutrition_per_serving:
+      calories: 500
+      protein_g: 18
+      carbs_g: 76
+      fat_g: 14
+      fiber_g: 6
+
+  - id: asi-005
+    name: "Vegetable Pad Thai (No Peanuts)"
+    cuisine: Asian
+    tags: [vegetarian, family-friendly, quick]
+    servings: 4
+    prep_time_min: 15
+    cook_time_min: 20
+    total_time_min: 35
+    difficulty: medium
+    ingredients:
+      - { name: pasta_spaghetti, quantity: 8, unit: oz }
+      - { name: eggs_dozen, quantity: 3, unit: each }
+      - { name: broccoli, quantity: 1, unit: head }
+      - { name: carrots, quantity: 1, unit: bag }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: soy_sauce, quantity: 4, unit: tbsp }
+      - { name: rice_vinegar, quantity: 2, unit: tbsp }
+      - { name: sesame_oil, quantity: 1, unit: tbsp }
+      - { name: honey, quantity: 1, unit: tbsp }
+      - { name: lime, quantity: 2, unit: each }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+    nutrition_per_serving:
+      calories: 460
+      protein_g: 18
+      carbs_g: 68
+      fat_g: 12
+      fiber_g: 6
+
+  - id: asi-006
+    name: "Japanese Miso Glazed Eggplant"
+    cuisine: Asian
+    tags: [vegetarian, vegan, gluten-free, quick, weekend]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 25
+    total_time_min: 35
+    difficulty: easy
+    ingredients:
+      - { name: eggplant, quantity: 2, unit: each }
+      - { name: soy_sauce, quantity: 3, unit: tbsp }
+      - { name: honey, quantity: 2, unit: tbsp }
+      - { name: rice_vinegar, quantity: 1, unit: tbsp }
+      - { name: sesame_oil, quantity: 1, unit: tbsp }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: ginger_root, quantity: 1, unit: piece }
+      - { name: vegetable_oil, quantity: 2, unit: tbsp }
+    nutrition_per_serving:
+      calories: 200
+      protein_g: 4
+      carbs_g: 28
+      fat_g: 9
+      fiber_g: 7
+
+  # ── American ───────────────────────────────────────────────────────────────
+
+  - id: ame-001
+    name: "Vegetable Minestrone Soup"
+    cuisine: American
+    tags: [vegetarian, vegan, meal-prep, batch-friendly, family-friendly]
+    servings: 8
+    prep_time_min: 15
+    cook_time_min: 45
+    total_time_min: 60
+    difficulty: easy
+    ingredients:
+      - { name: diced_tomatoes_can, quantity: 2, unit: can }
+      - { name: kidney_beans_can, quantity: 1, unit: can }
+      - { name: pasta_penne, quantity: 0.5, unit: lb }
+      - { name: carrots, quantity: 1, unit: bag }
+      - { name: celery, quantity: 1, unit: bunch }
+      - { name: zucchini, quantity: 1, unit: each }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: vegetable_broth, quantity: 1, unit: carton }
+      - { name: olive_oil, quantity: 2, unit: tbsp }
+      - { name: oregano_dried, quantity: 1, unit: tsp }
+      - { name: thyme_dried, quantity: 1, unit: tsp }
+      - { name: bay_leaves, quantity: 2, unit: each }
+    nutrition_per_serving:
+      calories: 260
+      protein_g: 11
+      carbs_g: 46
+      fat_g: 5
+      fiber_g: 10
+
+  - id: ame-002
+    name: "Stuffed Bell Peppers with Quinoa"
+    cuisine: American
+    tags: [vegetarian, gluten-free, meal-prep]
+    servings: 4
+    prep_time_min: 20
+    cook_time_min: 40
+    total_time_min: 60
+    difficulty: medium
+    ingredients:
+      - { name: bell_pepper_red, quantity: 4, unit: each }
+      - { name: quinoa, quantity: 1, unit: cup }
+      - { name: black_beans_can, quantity: 1, unit: can }
+      - { name: corn_on_cob, quantity: 2, unit: each }
+      - { name: diced_tomatoes_can, quantity: 1, unit: can }
+      - { name: cheddar_cheese, quantity: 4, unit: oz }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 2, unit: each }
+      - { name: olive_oil, quantity: 1, unit: tbsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: chili_powder, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 430
+      protein_g: 20
+      carbs_g: 60
+      fat_g: 12
+      fiber_g: 14
+
+  - id: ame-003
+    name: "Oatmeal with Fruit and Honey (Breakfast)"
+    cuisine: American
+    tags: [vegetarian, vegan-adaptable, quick, breakfast, family-friendly]
+    servings: 4
+    prep_time_min: 2
+    cook_time_min: 8
+    total_time_min: 10
+    difficulty: easy
+    ingredients:
+      - { name: oats_rolled, quantity: 2, unit: cup }
+      - { name: milk_whole_cup, quantity: 3, unit: cup }
+      - { name: honey, quantity: 3, unit: tbsp }
+      - { name: cinnamon_ground, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 290
+      protein_g: 10
+      carbs_g: 50
+      fat_g: 6
+      fiber_g: 5
+
+  - id: ame-004
+    name: "Vegetarian Chili"
+    cuisine: American
+    tags: [vegetarian, vegan, gluten-free, meal-prep, batch-friendly, family-friendly]
+    servings: 6
+    prep_time_min: 15
+    cook_time_min: 45
+    total_time_min: 60
+    difficulty: easy
+    ingredients:
+      - { name: black_beans_can, quantity: 2, unit: can }
+      - { name: kidney_beans_can, quantity: 1, unit: can }
+      - { name: crushed_tomatoes_can, quantity: 1, unit: can }
+      - { name: diced_tomatoes_can, quantity: 1, unit: can }
+      - { name: corn_on_cob, quantity: 3, unit: each }
+      - { name: bell_pepper_red, quantity: 2, unit: each }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: garlic_clove, quantity: 4, unit: each }
+      - { name: vegetable_broth, quantity: 1, unit: cup }
+      - { name: olive_oil, quantity: 2, unit: tbsp }
+      - { name: chili_powder, quantity: 2, unit: tbsp }
+      - { name: cumin_ground, quantity: 2, unit: tsp }
+      - { name: paprika_smoked, quantity: 1, unit: tsp }
+      - { name: oregano_dried, quantity: 1, unit: tsp }
+      - { name: sour_cream, quantity: 0.5, unit: cup }
+      - { name: cheddar_cheese, quantity: 4, unit: oz }
+    nutrition_per_serving:
+      calories: 370
+      protein_g: 18
+      carbs_g: 58
+      fat_g: 8
+      fiber_g: 18
+
+  - id: ame-005
+    name: "Scrambled Eggs with Vegetables (Breakfast)"
+    cuisine: American
+    tags: [vegetarian, gluten-free, quick, breakfast, protein-rich]
+    servings: 4
+    prep_time_min: 5
+    cook_time_min: 10
+    total_time_min: 15
+    difficulty: easy
+    ingredients:
+      - { name: eggs_dozen, quantity: 8, unit: each }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: cherry_tomatoes, quantity: 1, unit: pint }
+      - { name: onion_yellow, quantity: 0.5, unit: each }
+      - { name: bell_pepper_green, quantity: 1, unit: each }
+      - { name: butter, quantity: 1, unit: tbsp }
+      - { name: cheddar_cheese, quantity: 2, unit: oz }
+    nutrition_per_serving:
+      calories: 280
+      protein_g: 22
+      carbs_g: 8
+      fat_g: 18
+      fiber_g: 2
+
+  - id: ame-006
+    name: "Greek Yogurt Parfait (Breakfast)"
+    cuisine: American
+    tags: [vegetarian, gluten-free, no-cook, breakfast, quick]
+    servings: 4
+    prep_time_min: 5
+    cook_time_min: 0
+    total_time_min: 5
+    difficulty: easy
+    ingredients:
+      - { name: greek_yogurt_plain, quantity: 32, unit: oz }
+      - { name: honey, quantity: 4, unit: tbsp }
+      - { name: oats_rolled, quantity: 0.5, unit: cup }
+    nutrition_per_serving:
+      calories: 220
+      protein_g: 16
+      carbs_g: 32
+      fat_g: 3
+      fiber_g: 2
+
+  - id: ame-007
+    name: "Roasted Vegetable Sheet Pan Dinner"
+    cuisine: American
+    tags: [vegetarian, vegan, gluten-free, meal-prep, batch-friendly, hands-off]
+    servings: 4
+    prep_time_min: 15
+    cook_time_min: 35
+    total_time_min: 50
+    difficulty: easy
+    ingredients:
+      - { name: broccoli, quantity: 1, unit: head }
+      - { name: cauliflower, quantity: 0.5, unit: head }
+      - { name: sweet_potato, quantity: 2, unit: each }
+      - { name: bell_pepper_red, quantity: 1, unit: each }
+      - { name: onion_red, quantity: 1, unit: each }
+      - { name: chickpeas_can, quantity: 1, unit: can }
+      - { name: olive_oil, quantity: 4, unit: tbsp }
+      - { name: garlic_clove, quantity: 3, unit: each }
+      - { name: paprika_smoked, quantity: 1, unit: tsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+      - { name: oregano_dried, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 380
+      protein_g: 14
+      carbs_g: 54
+      fat_g: 13
+      fiber_g: 14
+
+  - id: ame-008
+    name: "Black Bean Quesadillas"
+    cuisine: American
+    tags: [vegetarian, quick, family-friendly, kid-approved]
+    servings: 4
+    prep_time_min: 5
+    cook_time_min: 15
+    total_time_min: 20
+    difficulty: easy
+    ingredients:
+      - { name: black_beans_can, quantity: 1, unit: can }
+      - { name: cheddar_cheese, quantity: 6, unit: oz }
+      - { name: bell_pepper_green, quantity: 1, unit: each }
+      - { name: onion_yellow, quantity: 0.5, unit: each }
+      - { name: sour_cream, quantity: 0.25, unit: cup }
+      - { name: vegetable_oil, quantity: 1, unit: tbsp }
+      - { name: cumin_ground, quantity: 1, unit: tsp }
+    nutrition_per_serving:
+      calories: 390
+      protein_g: 18
+      carbs_g: 42
+      fat_g: 16
+      fiber_g: 9
+
+  - id: ame-009
+    name: "Potato and Vegetable Hash (Breakfast)"
+    cuisine: American
+    tags: [vegetarian, gluten-free, weekend, breakfast, hearty]
+    servings: 4
+    prep_time_min: 10
+    cook_time_min: 25
+    total_time_min: 35
+    difficulty: easy
+    ingredients:
+      - { name: potato_russet, quantity: 4, unit: each }
+      - { name: bell_pepper_red, quantity: 1, unit: each }
+      - { name: onion_yellow, quantity: 1, unit: each }
+      - { name: mushrooms_cremini, quantity: 1, unit: container }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: eggs_dozen, quantity: 4, unit: each }
+      - { name: butter, quantity: 2, unit: tbsp }
+      - { name: paprika_smoked, quantity: 0.5, unit: tsp }
+      - { name: thyme_dried, quantity: 0.5, unit: tsp }
+    nutrition_per_serving:
+      calories: 380
+      protein_g: 16
+      carbs_g: 46
+      fat_g: 14
+      fiber_g: 6
+
+  - id: ame-010
+    name: "Caprese Salad with Quinoa"
+    cuisine: American
+    tags: [vegetarian, gluten-free, no-cook-base, quick, light]
+    servings: 4
+    prep_time_min: 15
+    cook_time_min: 15
+    total_time_min: 30
+    difficulty: easy
+    ingredients:
+      - { name: quinoa, quantity: 1, unit: cup }
+      - { name: cherry_tomatoes, quantity: 1, unit: pint }
+      - { name: mozzarella_fresh, quantity: 8, unit: oz }
+      - { name: spinach, quantity: 1, unit: bag }
+      - { name: olive_oil, quantity: 3, unit: tbsp }
+      - { name: lemon, quantity: 1, unit: each }
+      - { name: basil_dried, quantity: 1, unit: tsp }
+    nutrition_per_serving:
+      calories: 420
+      protein_g: 20
+      carbs_g: 38
+      fat_g: 20
+      fiber_g: 5

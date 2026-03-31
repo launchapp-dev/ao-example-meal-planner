@@ -1,0 +1,10 @@
+schedules:
+  - id: weekly-plan-generation
+    cron: "0 8 * * 0"
+    workflow_ref: weekly-plan
+    enabled: true
+
+  - id: monthly-review
+    cron: "0 9 1 * *"
+    workflow_ref: monthly-review
+    enabled: true

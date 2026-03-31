@@ -1,0 +1,66 @@
+default_workflow_ref: weekly-plan
+
+workflows:
+  - id: onboard
+    name: "Household Onboarding"
+    description: "One-time setup: analyze dietary needs, validate recipe database, and generate the first week's complete meal plan."
+    phases:
+      - analyze-dietary-needs
+      - validate-recipe-database
+      - build-initial-plan
+      - schedule-first-week
+      - generate-first-grocery-list
+      - plan-first-prep
+      - compile-first-plan
+    post_success:
+      merge:
+        strategy: squash
+        target_branch: main
+        create_pr: true
+        auto_merge: true
+        cleanup_worktree: true
+
+  - id: weekly-plan
+    name: "Weekly Meal Plan"
+    description: "Generate a complete weekly meal plan: recipe selection, meal calendar, grocery list with cost check, and prep schedule."
+    phases:
+      - log-pantry
+      - select-recipes
+      - review-nutrition:
+          on_verdict:
+            swap-needed:
+              target: select-recipes
+          max_rework_attempts: 2
+      - schedule-meals
+      - consolidate-grocery
+      - check-budget:
+          on_verdict:
+            over-budget:
+              target: select-recipes
+            adjust:
+              target: schedule-meals
+          max_rework_attempts: 2
+      - optimize-prep
+      - compile-weekly-plan
+    post_success:
+      merge:
+        strategy: squash
+        target_branch: main
+        create_pr: true
+        auto_merge: true
+        cleanup_worktree: true
+
+  - id: monthly-review
+    name: "Monthly Review"
+    description: "Aggregate 4 weeks of data, evaluate nutrition and budget trends, and produce the monthly performance report."
+    phases:
+      - calculate-monthly-stats
+      - evaluate-month
+      - compile-monthly-report
+    post_success:
+      merge:
+        strategy: squash
+        target_branch: main
+        create_pr: true
+        auto_merge: true
+        cleanup_worktree: true

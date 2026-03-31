@@ -1,0 +1,57 @@
+# Household Profile — edit this file to customize your meal planning
+household:
+  name: "The Sample Family"
+  members:
+    - name: "Alex"
+      role: adult
+      age: 35
+      activity_level: moderate  # sedentary | light | moderate | active | very-active
+      daily_calories_target: 2200
+    - name: "Jordan"
+      role: adult
+      age: 33
+      activity_level: light
+      daily_calories_target: 1800
+    - name: "Sam"
+      role: child
+      age: 8
+      activity_level: active
+      daily_calories_target: 1600
+
+  # Hard constraints — recipes containing ANY of these ingredients will be excluded
+  allergens:
+    - tree nuts
+    - peanuts
+
+  # Soft constraints — these restrict recipe categories
+  dietary_restrictions:
+    - vegetarian  # no meat, poultry, or seafood
+
+  # Preferences — used to weight recipe selection, not hard constraints
+  cuisine_preferences:
+    - Mediterranean
+    - Indian
+    - Mexican
+    - Asian
+  disliked_ingredients:
+    - olives
+    - anchovies
+    - blue cheese
+
+  # Budget
+  weekly_grocery_budget_usd: 150
+
+  # Meal count preferences
+  meals_per_day: 3  # breakfast, lunch, dinner
+  include_snacks: true
+
+  # Schedule context
+  busy_evenings:
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+  relaxed_evenings:
+    - Friday
+    - Saturday
+    - Sunday

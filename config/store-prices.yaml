@@ -1,0 +1,92 @@
+# Store Price Reference — estimated average US grocery prices
+# Prices are per unit as specified
+# Update these periodically to reflect your local store
+
+produce:
+  onion_yellow: { price: 0.89, unit: "each" }
+  onion_red: { price: 1.09, unit: "each" }
+  garlic_head: { price: 0.79, unit: "each" }
+  garlic_clove: { price: 0.10, unit: "each" }
+  tomato: { price: 0.75, unit: "each" }
+  cherry_tomatoes: { price: 3.49, unit: "pint" }
+  bell_pepper_red: { price: 1.49, unit: "each" }
+  bell_pepper_green: { price: 0.99, unit: "each" }
+  cucumber: { price: 0.79, unit: "each" }
+  zucchini: { price: 0.99, unit: "each" }
+  eggplant: { price: 1.79, unit: "each" }
+  broccoli: { price: 2.49, unit: "head" }
+  cauliflower: { price: 2.99, unit: "head" }
+  spinach: { price: 3.49, unit: "5oz bag" }
+  kale: { price: 2.49, unit: "bunch" }
+  carrots: { price: 1.49, unit: "1lb bag" }
+  celery: { price: 1.99, unit: "bunch" }
+  potato_russet: { price: 0.79, unit: "each" }
+  sweet_potato: { price: 0.99, unit: "each" }
+  lemon: { price: 0.59, unit: "each" }
+  lime: { price: 0.39, unit: "each" }
+  avocado: { price: 1.29, unit: "each" }
+  mushrooms_cremini: { price: 3.49, unit: "8oz container" }
+  corn_on_cob: { price: 0.59, unit: "each" }
+  ginger_root: { price: 0.99, unit: "per 2oz piece" }
+
+dairy:
+  eggs_dozen: { price: 3.99, unit: "dozen" }
+  milk_whole_gallon: { price: 4.29, unit: "gallon" }
+  milk_whole_cup: { price: 0.27, unit: "cup" }
+  butter: { price: 4.99, unit: "1lb" }
+  cheddar_cheese: { price: 4.49, unit: "8oz block" }
+  mozzarella_fresh: { price: 3.99, unit: "8oz" }
+  parmesan: { price: 4.99, unit: "6oz" }
+  greek_yogurt_plain: { price: 5.49, unit: "32oz" }
+  sour_cream: { price: 2.49, unit: "16oz" }
+  heavy_cream: { price: 2.99, unit: "pint" }
+  cream_cheese: { price: 2.99, unit: "8oz" }
+
+pantry:
+  olive_oil: { price: 8.99, unit: "16oz bottle" }
+  olive_oil_tbsp: { price: 0.37, unit: "tablespoon" }
+  coconut_oil: { price: 6.99, unit: "14oz jar" }
+  vegetable_oil: { price: 4.99, unit: "48oz" }
+  rice_white: { price: 2.99, unit: "2lb bag" }
+  rice_white_cup: { price: 0.37, unit: "cup dry" }
+  rice_brown: { price: 3.49, unit: "2lb bag" }
+  quinoa: { price: 5.99, unit: "1lb bag" }
+  quinoa_cup: { price: 0.75, unit: "cup dry" }
+  pasta_penne: { price: 1.89, unit: "1lb box" }
+  pasta_spaghetti: { price: 1.89, unit: "1lb box" }
+  pasta_cup: { price: 0.47, unit: "cup dry" }
+  lentils_red: { price: 2.49, unit: "1lb bag" }
+  lentils_cup: { price: 0.31, unit: "cup dry" }
+  chickpeas_can: { price: 1.29, unit: "15oz can" }
+  black_beans_can: { price: 1.09, unit: "15oz can" }
+  kidney_beans_can: { price: 1.19, unit: "15oz can" }
+  diced_tomatoes_can: { price: 1.49, unit: "14.5oz can" }
+  crushed_tomatoes_can: { price: 2.29, unit: "28oz can" }
+  tomato_paste: { price: 0.99, unit: "6oz can" }
+  coconut_milk_can: { price: 1.99, unit: "13.5oz can" }
+  vegetable_broth: { price: 2.49, unit: "32oz carton" }
+  soy_sauce: { price: 3.49, unit: "10oz bottle" }
+  sesame_oil: { price: 4.99, unit: "8oz bottle" }
+  rice_vinegar: { price: 3.49, unit: "12oz bottle" }
+  hot_sauce: { price: 2.99, unit: "5oz bottle" }
+  honey: { price: 5.99, unit: "12oz bottle" }
+  maple_syrup: { price: 8.99, unit: "12oz bottle" }
+  flour_all_purpose: { price: 3.99, unit: "5lb bag" }
+  breadcrumbs: { price: 2.29, unit: "8oz" }
+  oats_rolled: { price: 3.99, unit: "42oz" }
+
+spices:
+  cumin_ground: { price: 2.99, unit: "2oz jar" }
+  coriander_ground: { price: 2.99, unit: "2oz jar" }
+  turmeric: { price: 2.49, unit: "2oz jar" }
+  paprika_smoked: { price: 3.49, unit: "2oz jar" }
+  chili_powder: { price: 2.99, unit: "2oz jar" }
+  garam_masala: { price: 4.49, unit: "2oz jar" }
+  oregano_dried: { price: 2.49, unit: "0.75oz jar" }
+  thyme_dried: { price: 2.49, unit: "0.75oz jar" }
+  basil_dried: { price: 2.49, unit: "0.75oz jar" }
+  bay_leaves: { price: 2.49, unit: "0.5oz jar" }
+  red_pepper_flakes: { price: 2.49, unit: "1oz jar" }
+  cinnamon_ground: { price: 2.99, unit: "2oz jar" }
+  salt_kosher: { price: 3.99, unit: "3lb box" }
+  black_pepper_ground: { price: 3.49, unit: "2oz jar" }

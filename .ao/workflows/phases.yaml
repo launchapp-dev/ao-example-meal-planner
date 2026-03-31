@@ -1,0 +1,364 @@
+phases:
+  # ── Onboarding workflow ─────────────────────────────────────────────────────
+
+  analyze-dietary-needs:
+    mode: agent
+    agent: dietary-analyst
+    directive: |
+      Perform household dietary onboarding.
+
+      Read config/household-profile.yaml. For each household member:
+      - Extract all dietary restrictions (vegetarian, vegan, gluten-free, etc.)
+      - Extract all allergens (nuts, dairy, shellfish, etc.) — these are hard constraints
+      - Extract food preferences and dislikes
+      - Calculate daily calorie needs based on age/activity level if provided, otherwise use standard targets
+
+      Create data/dietary-profile.json with the full household profile.
+      Create config/nutrition-targets.yaml with per-day macro targets.
+
+      Write both files. Confirm completion.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  validate-recipe-database:
+    mode: command
+    command:
+      program: bash
+      args: ["-c", "python3 scripts/validate-recipes.py 2>&1 && echo 'VALIDATION PASSED' || echo 'VALIDATION FAILED'"]
+      cwd_mode: project_root
+      timeout_secs: 60
+
+  build-initial-plan:
+    mode: agent
+    agent: recipe-curator
+    directive: |
+      Select recipes for the first week of meal planning.
+
+      This is the initial onboarding selection — no history exists yet.
+
+      Read:
+      - config/recipe-database.yaml (full recipe catalog)
+      - data/dietary-profile.json (household constraints)
+      - data/pantry-inventory.json (starting pantry)
+
+      Select 14-18 recipes for the week. Prioritize variety across cuisines.
+      Use pantry staples to reduce first-week shopping cost.
+
+      Write data/selected-recipes.json.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  schedule-first-week:
+    mode: agent
+    agent: meal-scheduler
+    directive: |
+      Create the 7-day meal calendar for week 1.
+
+      Read data/selected-recipes.json.
+      Use today's date as the week start (Monday).
+
+      Apply scheduling rules:
+      - Quick meals on weeknights
+      - Longer meals on weekends
+      - Maximize leftover utilization mid-week
+      - Balance cuisine variety across days
+
+      Write data/weekly-calendar.json.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  generate-first-grocery-list:
+    mode: agent
+    agent: grocery-optimizer
+    directive: |
+      Generate the complete grocery list for week 1.
+
+      Consolidate all ingredients from data/weekly-calendar.json.
+      Subtract items already in data/pantry-inventory.json.
+      Apply prices from config/store-prices.yaml.
+
+      Write:
+      - data/grocery-list.json (structured, by aisle)
+      - data/cost-estimate.json (totals, per-meal cost, vs budget)
+      - shopping-lists/week-1.md (printable grocery list)
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  plan-first-prep:
+    mode: agent
+    agent: prep-planner
+    directive: |
+      Create the prep schedule for week 1.
+
+      Read data/weekly-calendar.json and config/recipe-database.yaml.
+      Design the Sunday batch cooking session and daily prep tasks.
+      Focus on batch opportunities: grain cooking, protein marinating, vegetable roasting.
+
+      Write data/prep-schedule.json.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  compile-first-plan:
+    mode: agent
+    agent: report-compiler
+    directive: |
+      Generate the complete week 1 meal plan document.
+
+      Read all data files:
+      - data/weekly-calendar.json
+      - data/grocery-list.json
+      - data/cost-estimate.json
+      - data/prep-schedule.json
+      - data/dietary-profile.json
+      - config/recipe-database.yaml
+
+      Generate plans/week-1.md as a complete, household-ready document.
+      Include: calendar table, recipe notes, prep checklist, grocery list, cost summary.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  # ── Weekly plan workflow ─────────────────────────────────────────────────────
+
+  log-pantry:
+    mode: command
+    command:
+      program: bash
+      args: ["-c", "python3 scripts/log-pantry.py 2>&1 && echo 'Pantry updated successfully' || echo 'Using existing pantry inventory'"]
+      cwd_mode: project_root
+      timeout_secs: 30
+
+  select-recipes:
+    mode: agent
+    agent: recipe-curator
+    directive: |
+      Select this week's recipes for the weekly meal plan.
+
+      Read:
+      - config/recipe-database.yaml (full catalog)
+      - data/dietary-profile.json (household constraints)
+      - data/pantry-inventory.json (current pantry — PRIORITIZE items nearing expiry)
+      - data/history/ (recent 4 weeks — AVOID repeating recipes)
+      - config/household-profile.yaml (weekly budget)
+
+      Use sequential-thinking to reason through the multi-constraint optimization:
+      1. First filter by dietary restrictions and allergens (hard constraints)
+      2. Then filter by variety (no repeats from last 4 weeks)
+      3. Then optimize for pantry utilization
+      4. Then balance nutrition to hit weekly macro targets
+      5. Then optimize for budget
+
+      Select 14-18 recipes. Write data/selected-recipes.json with full justification for each selection.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  review-nutrition:
+    mode: agent
+    agent: dietary-analyst
+    directive: |
+      Review this week's selected recipes for nutritional adequacy.
+
+      Read:
+      - data/selected-recipes.json (this week's selections)
+      - config/recipe-database.yaml (macro data per recipe)
+      - config/nutrition-targets.yaml (weekly targets)
+      - data/dietary-profile.json (household nutritional requirements)
+
+      Calculate weekly totals for: calories, protein, carbohydrates, fat, fiber.
+      Compare against targets. Allow ±10% tolerance.
+
+      Decision criteria:
+      - 'approve': all macros within ±10% of weekly targets
+      - 'swap-needed': any macro outside ±10% — specify which macro, by how much, and which recipe types would fix it
+
+      Output a decision with verdict and detailed nutritional breakdown.
+    decision_contract:
+      required_fields: [verdict, reasoning, nutritional_summary]
+      valid_verdicts: [approve, swap-needed]
+
+  schedule-meals:
+    mode: agent
+    agent: meal-scheduler
+    directive: |
+      Arrange this week's approved recipe selection into a 7-day meal calendar.
+
+      Read:
+      - data/selected-recipes.json (approved recipes with nutritional data)
+      - config/household-profile.yaml (household schedule preferences)
+
+      Apply scheduling rules:
+      - Monday–Thursday: max 30 min total active cooking for dinner
+      - Friday: slightly flexible (family fun meal or takeout-style home cooking)
+      - Saturday: can be 45-60 min cooking
+      - Sunday: up to 90 min for main meal; this is also batch cooking day
+      - Utilize leftovers for lunches throughout the week
+      - Group similar cuisines to minimize spice cabinet variety needed on same day
+
+      Write data/weekly-calendar.json with full 7-day structure.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  consolidate-grocery:
+    mode: agent
+    agent: grocery-optimizer
+    directive: |
+      Build this week's consolidated grocery list.
+
+      Read:
+      - data/weekly-calendar.json (meal schedule)
+      - config/recipe-database.yaml (ingredient quantities per recipe)
+      - data/pantry-inventory.json (current pantry — subtract available items)
+      - config/store-prices.yaml (price estimates)
+
+      Consolidate identical ingredients across all recipes.
+      Subtract pantry-available quantities.
+      Group by store aisle.
+
+      Write:
+      - data/grocery-list.json
+      - data/cost-estimate.json
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  check-budget:
+    mode: agent
+    agent: grocery-optimizer
+    directive: |
+      Review this week's estimated grocery cost against the household budget.
+
+      Read:
+      - data/cost-estimate.json (estimated totals)
+      - config/household-profile.yaml (weekly grocery budget)
+
+      Compare estimated grand_total against budget:
+      - 'on-track': within 5% of budget (under or slightly over)
+      - 'over-budget': more than 5% over budget — identify 3 most expensive non-essential items and suggest cheaper substitutes
+      - 'adjust': exactly at budget boundary, suggest 1-2 minor optimizations
+
+      Include specific recipe substitution suggestions when over budget.
+    decision_contract:
+      required_fields: [verdict, reasoning, cost_breakdown]
+      valid_verdicts: [on-track, over-budget, adjust]
+
+  optimize-prep:
+    mode: agent
+    agent: prep-planner
+    directive: |
+      Create the weekly prep schedule for this week's meal plan.
+
+      Read:
+      - data/weekly-calendar.json (meal schedule)
+      - config/recipe-database.yaml (prep/cook times, techniques)
+
+      Design:
+      1. Sunday batch cooking session (≤3 hours): identify all base components that appear in 2+ recipes
+      2. Daily prep tasks for Monday–Saturday evenings (≤20 min each)
+      3. Morning prep tasks where needed (≤10 min)
+
+      Identify batch opportunities:
+      - Grains (rice, quinoa, pasta) used across multiple meals
+      - Roasted vegetables (sheet pan, multi-use)
+      - Proteins (marinate/cook large batch, portion out)
+      - Sauces and dressings
+
+      Write data/prep-schedule.json.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  compile-weekly-plan:
+    mode: agent
+    agent: report-compiler
+    directive: |
+      Generate this week's complete meal plan document.
+
+      Determine the week start date from data/weekly-calendar.json.
+      Name the output file: plans/week-YYYY-MM-DD.md
+
+      Include all sections:
+      1. Week summary header (dates, total cost, budget status, on-track nutrition)
+      2. 7-Day Meal Calendar (formatted table)
+      3. Recipe Quick Reference (one paragraph per recipe with key cooking notes)
+      4. Weekly Nutritional Summary (table: macro, target, actual, %)
+      5. Prep Schedule (Sunday batch session + daily tasks as checklists)
+      6. Grocery List (by aisle, with checkboxes and quantities)
+      7. Cost Breakdown (per meal, total, vs budget)
+      8. Pantry Usage Notes (items consumed this week, items to restock)
+
+      Also write shopping-lists/week-YYYY-MM-DD.md as a standalone printable shopping list.
+    capabilities:
+      mutates_state: true
+      writes_files: true
+
+  # ── Monthly review workflow ──────────────────────────────────────────────────
+
+  calculate-monthly-stats:
+    mode: command
+    command:
+      program: bash
+      args: ["-c", "python3 scripts/calculate-monthly-stats.py 2>&1 && echo 'Monthly stats calculated' || echo 'Stats calculation failed'"]
+      cwd_mode: project_root
+      timeout_secs: 60
+
+  evaluate-month:
+    mode: agent
+    agent: dietary-analyst
+    directive: |
+      Evaluate last month's meal planning performance and recommend adjustments.
+
+      Read:
+      - data/history/ (last 4 weeks of selected-recipes and calendar snapshots)
+      - data/monthly-stats.json (aggregated from calculate-monthly-stats)
+      - config/nutrition-targets.yaml (current targets)
+      - config/household-profile.yaml (household profile)
+
+      Analyze:
+      1. Nutrition adherence: how often did weekly totals hit targets?
+      2. Budget adherence: were weeks on-track, over, or under budget?
+      3. Recipe variety: any cuisine or ingredient ruts?
+      4. Prep schedule effectiveness: which batch tasks recurred most?
+
+      Decision:
+      - 'maintain': performance good, no changes needed (>80% targets met, budget on-track)
+      - 'adjust-targets': nutrition targets need updating (household member change, season change, fitness goal change)
+      - 'expand-recipes': recipe database needs more variety (>3 weeks repeating same 5 recipes)
+
+      Include specific recommendations for the chosen path.
+    decision_contract:
+      required_fields: [verdict, reasoning, monthly_summary]
+      valid_verdicts: [maintain, adjust-targets, expand-recipes]
+
+  compile-monthly-report:
+    mode: agent
+    agent: report-compiler
+    directive: |
+      Generate the monthly meal planning review document.
+
+      Read:
+      - data/history/ (4 weeks of plans)
+      - data/monthly-stats.json
+      - data/dietary-profile.json
+      - config/nutrition-targets.yaml
+
+      Generate reports/month-YYYY-MM.md with:
+      1. Executive Summary (cost, nutrition adherence, highlight of the month)
+      2. Weekly Cost Trend (ASCII chart: 4 weeks of costs vs budget line)
+      3. Nutrition Adherence Table (4 weeks × macros, showing % of target achieved)
+      4. Top 5 Recipes (most frequently selected, highest satisfaction if tracked)
+      5. Recipe Variety Analysis (cuisine breakdown across the month)
+      6. Budget Analysis (over/under each week, total monthly spend vs target)
+      7. Prep Efficiency Notes (most-used batch components, time savings)
+      8. Recommendations for Next Month (based on evaluate-month verdict)
+
+      Make the report data-driven and actionable.
+    capabilities:
+      mutates_state: true
+      writes_files: true
